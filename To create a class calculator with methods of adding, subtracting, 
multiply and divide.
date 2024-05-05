@@ -1,0 +1,39 @@
+class Calculator:
+  def __init__(self):
+    pass
+
+  def add(self, num1, num2):
+    """Adds two numbers and returns the result."""
+    return num1 + num2
+
+  def subtract(self, num1, num2):
+    """Subtracts two numbers and returns the result."""
+    return num1 - num2
+
+  def multiply(self, num1, num2):
+    """Multiplies two numbers and returns the result."""
+    return num1 * num2
+
+  def divide(self, num1, num2):
+    """Divides two numbers and returns the result. Handles division by zero."""
+    if num2 == 0:
+      print("Error: Cannot divide by zero.")
+      return None
+    else:
+      return num1 / num2
+
+# Example usage (without input)
+calculator = Calculator()
+result = calculator.add(5, 3)
+print(f"5 + 3 = {result}")
+
+result = calculator.subtract(10, 2)
+print(f"10 - 2 = {result}")
+
+result = calculator.multiply(4, 6)
+print(f"4 * 6 = {result}")
+
+result = calculator.divide(12, 3)
+print(f"12 / 3 = {result}")
+
+result = calculator.divide(10, 0)  # Should print error message
