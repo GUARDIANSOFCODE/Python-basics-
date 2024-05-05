@@ -1,0 +1,58 @@
+class Bank:
+  def __init__(self):
+    self.customers = {}  # Dictionary to store customer accounts {account_number: Account object}
+
+  def create_account(self, account_number, name, initial_balance=0):
+    if account_number in self.customers:
+      print("Account number already exists.")
+    else:
+      self.customers[account_number] = Account(account_number, name, initial_balance)
+      print(f"Account created successfully for {name} with account number {account_number}.")
+
+  def deposit(self, account_number, amount):
+    if account_number not in self.customers:
+      print("Account not found.")
+    else:
+      self.customers[account_number].deposit(amount)
+      print(f"Deposited {amount}. New balance for account {account_number} is {self.customers[account_number].balance}.")
+
+  def withdraw(self, account_number, amount):
+    if account_number not in self.customers:
+      print("Account not found.")
+    else:
+      if self.customers[account_number].withdraw(amount):
+        print(f"Withdrew {amount}. New balance for account {account_number} is {self.customers[account_number].balance}.")
+      else:
+        print("Insufficient funds.")
+
+  def get_balance(self, account_number):
+    if account_number not in self.customers:
+      print("Account not found.")
+    else:
+      print(f"Balance for account {account_number} is {self.customers[account_number].balance}.")
+
+
+class Account:
+  def __init__(self, account_number, name, balance):
+    self.account_number = account_number
+    self.name = name
+    self.balance = balance
+
+  def deposit(self, amount):
+    self.balance += amount
+    return True
+
+  def withdraw(self, amount):
+    if amount <= self.balance:
+      self.balance -= amount
+      return True
+    else:
+      return False
+
+
+# Example usage
+bank = Bank()
+bank.create_account(12345, "John Doe", 1000)
+bank.deposit(12345, 500)
+bank.withdraw(12345, 200)
+bank.get_balance(12345)
