@@ -1,0 +1,19 @@
+def is_even(number):
+  """Checks if a number is even.
+
+  Args:
+      number: The number to check.
+
+  Returns:
+      True if the number is even, False otherwise.
+  """
+  return number % 2 == 0
+
+# Get user input
+number = int(input("Enter a number: "))
+
+# Check if even
+if is_even(number):
+  print(number, "is even.")
+else:
+  print(number, "is odd.")
