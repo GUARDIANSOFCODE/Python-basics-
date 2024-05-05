@@ -1,0 +1,10 @@
+my_list = [1, 2, 3, 4, 5]
+
+# Accessing elements by index
+for i in range(len(my_list)):
+  element = my_list[i]
+  print(f"Element at index {i}:", element)
+
+# Accessing elements directly
+for element in my_list:
+  print(element)
