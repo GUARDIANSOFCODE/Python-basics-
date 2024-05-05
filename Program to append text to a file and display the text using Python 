@@ -1,0 +1,23 @@
+def append_and_display(filename, text):
+  """Appends text to a file and then displays the entire content.
+
+  Args:
+      filename: The path to the text file.
+      text: The text to append to the file.
+  """
+  try:
+    with open(filename, 'a') as file:  # Open in append mode ('a')
+      file.write(text + '\n')  # Append text with a newline character
+    with open(filename, 'r') as file:  # Open again for reading
+      content = file.read()
+      print("File Content (after appending):")
+      print(content)
+  except FileNotFoundError:
+    print("Error: File not found.")
+
+# Get filename and text from user
+filename = input("Enter the filename: ")
+text = input("Enter the text to append: ")
+
+# Append and display
+append_and_display(filename, text)
