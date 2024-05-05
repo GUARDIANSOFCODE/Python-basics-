@@ -1,0 +1,29 @@
+def create_biodata():
+    """Creates and displays biodata information."""
+
+    name = "Sankalp Sharma"
+    age = 19
+    profession = "Student"
+    # Add more fields as needed (e.g., email, phone number, skills, hobbies)
+    email = "sankalp.sharma@example.com"  # Example email
+    skills = ["Python", "Problem Solving", "Communication"]
+    hobbies = ["Reading", "Music", "Hiking"]
+
+    print("-" * 30)  # Decorative separator
+    print(f"Name: {name}")
+    print(f"Age: {age}")
+    print(f"Profession: {profession}")
+    print(f"Email: {email}")  # Include email if desired
+    # Print additional fields if added above
+    if skills:
+        print(f"Skills:")
+        for skill in skills:
+            print(f"- {skill}")
+    if hobbies:
+        print(f"Hobbies:")
+        for hobby in hobbies:
+            print(f"- {hobby}")
+    print("-" * 30)  # Decorative separator
+
+if __name__ == "__main__":
+    create_biodata()
