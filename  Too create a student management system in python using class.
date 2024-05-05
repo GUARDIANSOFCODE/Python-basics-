@@ -1,0 +1,103 @@
+class Student:
+  """
+  Represents a student with name, roll number, and course enrolled.
+  """
+
+  def __init__(self, name, roll_number, course):
+    """
+    Initializes a student object with the given name, roll number, and course.
+
+    Args:
+        name: The student's name.
+        roll_number: The student's roll number.
+        course: The course the student is enrolled in.
+    """
+
+    self.name = name
+    self.roll_number = roll_number
+    self.course = course
+
+  def display_info(self):
+    """
+    Prints the student's information (name, roll number, course).
+    """
+
+    print(f"Name: {self.name}")
+    print(f"Roll Number: {self.roll_number}")
+    print(f"Course: {self.course}")
+
+
+class StudentManagementSystem:
+  """
+  Manages a list of students and provides functionalities to add, search, and display student information.
+  """
+
+  def __init__(self):
+    """
+    Initializes an empty list to store students.
+    """
+
+    self.students = []
+
+  def add_student(self, student):
+    """
+    Adds a student object to the list of students.
+
+    Args:
+        student: The student object to be added.
+    """
+
+    self.students.append(student)
+
+  def search_student(self, roll_number):
+    """
+    Searches for a student by roll number and returns the student object if found, otherwise None.
+
+    Args:
+        roll_number: The roll number of the student to search for.
+
+    Returns:
+        The student object if found, otherwise None.
+    """
+
+    for student in self.students:
+      if student.roll_number == roll_number:
+        return student
+    return None
+
+  def display_all_students(self):
+    """
+    Prints the information of all students in the system.
+    """
+
+    if not self.students:
+      print("No students found in the system.")
+      return
+
+    print("Student Information:")
+    for student in self.students:
+      student.display_info()
+      print()  # Print a newline after each student information
+
+# Example Usage
+student_management_system = StudentManagementSystem()
+
+# Add some students
+student1 = Student("Alice", 123, "Computer Science")
+student2 = Student("Bob", 456, "Mathematics")
+student_management_system.add_student(student1)
+student_management_system.add_student(student2)
+
+# Search for a student
+search_roll_number = 456
+searched_student = student_management_system.search_student(search_roll_number)
+
+if searched_student:
+  print("Student Found:")
+  searched_student.display_info()
+else:
+  print(f"Student with roll number {search_roll_number} not found.")
+
+# Display all students
+print("\nAll Students:")
+student_management_system.display_all_students()
