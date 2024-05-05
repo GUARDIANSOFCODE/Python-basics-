@@ -1,0 +1,8 @@
+name = "Alice"
+age = 30
+city = "New York"
+
+print(name, age, city)  # Prints each argument separated by spaces
+print(name, end=" ")  # Use `end` argument to control separator
+print(age, end=", ")
+print(city)
