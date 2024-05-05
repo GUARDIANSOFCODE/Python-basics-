@@ -1,0 +1,28 @@
+def read_entire_file(filename):
+  """Reads the entire content of a text file.
+
+  Args:
+      filename: The path to the text file.
+
+  Returns:
+      A string containing the entire file content, or None if an error occurs.
+  """
+  try:
+    with open(filename, 'r') as file:
+      content = file.read()
+      return content
+  except FileNotFoundError:
+    print("Error: File not found.")
+    return None
+
+# Get filename from user
+filename = input("Enter the filename: ")
+
+# Read the file
+content = read_entire_file(filename)
+
+if content:
+  print("File Content:")
+  print(content)
+else:
+  print("Error reading file.")
