@@ -1,0 +1,17 @@
+def fibonacci(n):
+  """Prints the Fibonacci series up to n.
+
+  Args:
+      n: The number of terms to print.
+  """
+  a, b = 0, 1
+  for i in range(n):
+    print(a, end=" ")
+    a, b = b, a + b
+
+# Get user input
+n = int(input("Enter the number of terms: "))
+
+# Print Fibonacci series
+print("Fibonacci Series:")
+fibonacci(n)
