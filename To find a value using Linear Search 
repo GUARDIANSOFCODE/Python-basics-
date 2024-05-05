@@ -1,0 +1,27 @@
+def linear_search(data_list, value):
+  """
+  Performs a linear search on a list to find the index of a value.
+
+  Args:
+      data_list: The list to search through.
+      value: The value to find.
+
+  Returns:
+      The index of the value in the list, or -1 if not found.
+  """
+
+  for i, item in enumerate(data_list):
+    if item == value:
+      return i
+  return -1
+
+# Example usage
+data = [10, 22, 35, 17, 4, 12]
+search_value = 17
+
+index = linear_search(data, search_value)
+
+if index != -1:
+  print(f"Value {search_value} found at index {index}")
+else:
+  print(f"Value {search_value} not found in the list")
