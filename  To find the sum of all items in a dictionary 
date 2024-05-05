@@ -1,0 +1,22 @@
+def sum_dictionary_values(my_dict):
+  """
+  This function calculates the sum of all values in a dictionary.
+
+  Args:
+      my_dict: The dictionary containing the values to sum.
+
+  Returns:
+      The sum of all values in the dictionary.
+  """
+
+  # Use sum() with the values() method for concise summation
+  return sum(my_dict.values())
+
+# Create a sample dictionary
+my_dict = {"apple": 5, "banana": 3, "orange": 7}
+
+# Call the function to find the sum
+total_sum = sum_dictionary_values(my_dict)
+
+# Print the result
+print("The sum of all values in the dictionary:", total_sum)
