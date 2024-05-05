@@ -1,0 +1,39 @@
+from tkinter import Tk, Label, Entry, Button
+
+# Define a function to handle login attempts
+def login():
+    username = username_entry.get()
+    password = password_entry.get()
+
+    # Simulate login validation (replace with your actual logic)
+    if username == "admin" and password == "secret":
+        print("Login successful!")
+        # You can close the login window here or open a new window
+    else:
+        print("Invalid username or password")
+        # Optionally, clear the password entry or display an error message
+
+# Create the main window
+root = Tk()
+root.title("Login Form")
+
+# Create labels for username and password
+username_label = Label(root, text="Username:")
+username_label.grid(row=0, column=0)
+
+password_label = Label(root, text="Password:")
+password_label.grid(row=1, column=0)
+
+# Create entry fields for username and password
+username_entry = Entry(root)
+username_entry.grid(row=0, column=1)
+
+password_entry = Entry(root, show="*")  # Hides password characters
+password_entry.grid(row=1, column=1)
+
+# Create a login button
+login_button = Button(root, text="Login", command=login)
+login_button.grid(row=2, columnspan=2)
+
+# Run the main event loop
+root.mainloop()
