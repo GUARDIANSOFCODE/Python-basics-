@@ -1,0 +1,29 @@
+def calculate_sum_average(tuple_data):
+  """Calculates the sum and average of elements in a tuple.
+
+  Args:
+      tuple_data: The tuple containing the numbers.
+
+  Returns:
+      A tuple containing the sum and average (or None if the tuple is empty).
+  """
+
+  if not tuple_data:
+    return None  # Return None for empty tuple
+
+  sum_of_elements = sum(tuple_data)
+  average = sum_of_elements / len(tuple_data)
+  return sum_of_elements, average
+
+# Get tuple data from user
+numbers = tuple(map(int, input("Enter comma-separated numbers: ").split(',')))
+
+# Calculate sum and average
+result = calculate_sum_average(numbers)
+
+if result:  # Check if result is not None (empty tuple case)
+  sum_of_elements, average = result
+  print("Sum of elements:", sum_of_elements)
+  print("Average:", average)
+else:
+  print("Error: Empty tuple provided.")
