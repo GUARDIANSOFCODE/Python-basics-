@@ -1,0 +1,40 @@
+def string_function_examples(text):
+  """Demonstrates common string functions.
+
+  Args:
+      text: The string to use as input for the functions.
+  """
+
+  # String capitalization
+  print("Original:", text)
+  print("Capitalized:", text.capitalize())  # Capitalize the first letter
+  print("Uppercase:", text.upper())  # Convert all to uppercase
+  print("Lowercase:", text.lower())  # Convert all to lowercase
+  print("Title case:", text.title())  # Capitalize the first letter of each word
+
+  # String splitting and joining
+  words = text.split()  # Split into a list of words
+  print("Words:", words)
+  joined_text = " ".join(words)  # Join the words back with spaces
+  print("Joined:", joined_text)
+
+  # String searching and extraction
+  if "Python" in text:
+    print("Found 'Python' in the text.")
+  else:
+    print("Couldn't find 'Python' in the text.")
+
+  index = text.find("script")  # Find the index of the first occurrence (or -1 if not found)
+  if index != -1:
+    print("Index of 'script':", index)
+    extracted = text[index:]  # Extract the substring from the index onwards
+    print("Extracted from index:", extracted)
+
+  # String formatting and escaping
+  formatted_str = f"The string is '{text}'"  # f-string formatting
+  print("Formatted (f-string):", formatted_str)
+  escaped_str = text.replace("'", "\\'")  # Escape single quotes (for printing)
+  print("Escaped single quotes:", escaped_str)
+
+text = input("Enter a string: ")
+string_function_examples(text)
