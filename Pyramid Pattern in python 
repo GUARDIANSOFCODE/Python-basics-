@@ -1,0 +1,14 @@
+def print_pyramid(rows):
+  """Prints a right-angled pyramid pattern with asterisks."""
+  for i in range(1, rows + 1):
+    # Print spaces before asterisks for right-angled pyramid
+    print(' ' * (rows - i), end='')
+    # Print i asterisks in each row
+    print('*' * (2 * i - 1))
+
+# Get the number of rows from the user (optional)
+# rows = int(input("Enter the number of rows: "))
+
+# Print the pyramid pattern with default value (optional)
+rows = 5
+print_pyramid(rows)
