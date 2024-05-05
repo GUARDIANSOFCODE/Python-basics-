@@ -1,0 +1,62 @@
+class Person:
+  def __init__(self, name, address, phone, id):
+    self.name = name
+    self.address = address
+    self.phone = phone
+    self.id = id
+
+  def get_info(self):
+    """Returns a string with the person's information."""
+    return f"Name: {self.name}\nAddress: {self.address}\nPhone: {self.phone}\nID: {self.id}"
+
+
+class Teacher(Person):
+  def __init__(self, name, address, phone, id, tid, course, faculty):
+    super().__init__(name, address, phone, id)  # Call parent class constructor
+    self.tid = tid
+    self.course = course
+    self.faculty = faculty
+
+  def get_info(self):
+    """Returns a string with the teacher's information."""
+    info = super().get_info()  # Call parent class get_info method
+    return f"{info}\nTID: {self.tid}\nCourse: {self.course}\nFaculty: {self.faculty}"
+
+
+class Student(Person):
+  def __init__(self, name, address, phone, id, student_id, major):
+    super().__init__(name, address, phone, id)  # Call parent class constructor
+    self.student_id = student_id
+    self.major = major
+
+  def get_info(self):
+    """Returns a string with the student's information."""
+    info = super().get_info()  # Call parent class get_info method
+    return f"{info}\nStudent ID: {self.student_id}\nMajor: {self.major}"
+
+
+# Example usage
+# Create a person object
+person = Person("John Doe", "123 Main St", "555-123-4567", 12345)
+print(person.get_info())  # Output: Name: John Doe\nAddress: 123 Main St\nPhone: 555-123-4567\nID: 12345
+
+# Create a teacher object
+teacher = Teacher("Jane Smith", "456 Elm St", "555-789-0123", 54321, 1001, "Computer Science", "Engineering")
+print(teacher.get_info())  # Output: 
+# Name: Jane Smith
+# Address: 456 Elm St
+# Phone: 555-789-0123
+# ID: 54321
+# TID: 1001
+# Course: Computer Science
+# Faculty: Engineering
+
+# Create a student object
+student = Student("Alice Jones", "789 Maple Ave", "555-456-7890", 98765, 2023, "Mathematics")
+print(student.get_info())  # Output: 
+# Name: Alice Jones
+# Address: 789 Maple Ave
+# Phone: 555-456-7890
+# ID: 98765
+# Student ID: 2023
+# Major: Mathematics
