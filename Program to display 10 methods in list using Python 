@@ -1,0 +1,51 @@
+# Sample list
+my_list = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3]
+
+# 1. append(element): Add an element to the end of the list.
+my_list.append(7)
+print("After append:", my_list)
+
+# 2. clear(): Remove all elements from the list.
+my_list.clear()
+print("After clear:", my_list)
+
+# 3. copy(): Return a shallow copy of the list.
+copied_list = my_list.copy()
+my_list.append(10)
+print("Original list:", my_list)
+print("Copied list (remains unchanged):", copied_list)
+
+# 4. count(element): Count the number of occurrences of an element.
+count_of_5 = my_list.count(5)
+print("Count of 5:", count_of_5)
+
+# 5. extend(iterable): Extend the list by appending all elements from an iterable.
+my_list.extend([11, 12])
+print("After extend:", my_list)
+
+# 6. index(element): Return the first index of an element (raises ValueError if not found).
+try:
+  index_of_3 = my_list.index(3)
+  print("Index of first 3:", index_of_3)
+except ValueError:
+  print("ValueError: Element not found in the list.")
+
+# 7. insert(index, element): Insert an element at a specific index.
+my_list.insert(2, 8)
+print("After insert:", my_list)
+
+# 8. pop(index=-1): Remove and return the element at a specific index (defaults to last).
+removed_element = my_list.pop(4)
+print("Removed element (index 4):", removed_element)
+print("After pop:", my_list)
+
+# 9. remove(element): Remove the first occurrence of an element (raises ValueError if not found).
+try:
+  my_list.remove(12)
+  print("After remove(12):", my_list)
+except ValueError:
+  print("ValueError: Element not found in the list.")
+
+# 10. reverse(): Reverse the elements of the list in-place.
+my_list.reverse()
+print("After reverse:", my_list)
