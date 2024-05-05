@@ -1,0 +1,41 @@
+def swap_with_temp(num1, num2):
+  """Swaps two numbers using a temporary variable.
+
+  Args:
+      num1: The first number.
+      num2: The second number.
+
+  Returns:
+      A tuple containing the swapped numbers (num2, num1).
+  """
+  temp = num1
+  num1 = num2
+  num2 = temp
+  return num2, num1
+
+def swap_arithmetic(num1, num2):
+  """Swaps two numbers using arithmetic operations.
+
+  Args:
+      num1: The first number.
+      num2: The second number.
+
+  Returns:
+      A tuple containing the swapped numbers (num2, num1).
+  """
+  num1 = num1 + num2  # Add num2 to num1 (stores their sum)
+  num2 = num1 - num2  # Subtract num2 from num1 (retrieves original num1)
+  num1 = num1 - num2  # Subtract num2 (original num1) from num1 (sum) to get original num2
+  return num2, num1
+
+# Example usage
+num1 = 10
+num2 = 20
+
+print("Before swapping: num1 =", num1, ", num2 =", num2)
+
+num2, num1 = swap_with_temp(num1, num2)
+print("After swapping (using temporary variable): num1 =", num1, ", num2 =", num2)
+
+num2, num1 = swap_arithmetic(num1, num2)
+print("After swapping (using arithmetic operations): num1 =", num1, ", num2 =", num2)
