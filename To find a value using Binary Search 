@@ -1,0 +1,42 @@
+def binary_search(data_list, value):
+  """
+  Performs a binary search on a sorted list to find the index of a value.
+
+  Args:
+      data_list: The sorted list to search through.
+      value: The value to find.
+
+  Returns:
+      The index of the value in the list, or -1 if not found.
+  """
+
+  low = 0
+  high = len(data_list) - 1
+  mid = 0
+
+  while low <= high:
+    # Integer division for mid to avoid overflow
+    mid = (low + high) // 2
+
+    if data_list[mid] == value:
+      return mid
+    elif data_list[mid] < value:
+      low = mid + 1
+    else:
+      high = mid - 1
+
+  return -1
+
+# Example usage
+data = [2, 5, 7, 9, 12, 15, 19]
+search_value = 12
+
+# Ensure the data list is sorted before binary search
+data.sort()  # Sorts the list in-place
+
+index = binary_search(data, search_value)
+
+if index != -1:
+  print(f"Value {search_value} found at index {index}")
+else:
+  print(f"Value {search_value} not found in the list")
