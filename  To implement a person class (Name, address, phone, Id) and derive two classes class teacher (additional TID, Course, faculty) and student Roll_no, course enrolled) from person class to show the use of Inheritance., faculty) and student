@@ -1,0 +1,54 @@
+class Person:
+    def __init__(self, name, address, phone, Id):
+        self.name = name
+        self.address = address
+        self.phone = phone
+        self.Id = Id
+
+    def display(self):
+        print(f"Name: {self.name}")
+        print(f"Address: {self.address}")
+        print(f"Phone: {self.phone}")
+        print(f"Id: {self.Id}")
+
+
+class Teacher(Person):
+    def __init__(self, name, address, phone, Id, TID, Course, faculty):
+        super().__init__(name, address, phone, Id)
+        self.TID = TID
+        self.Course = Course
+        self.faculty = faculty
+
+    def display(self):
+        super().display()
+        print(f"TID: {self.TID}")
+        print(f"Course: {self.Course}")
+        print(f"Faculty: {self.faculty}")
+
+
+class Student(Person):
+    def __init__(self, name, address, phone, Id, roll_no, course_enrolled):
+        super().__init__(name, address, phone, Id)
+        self.roll_no = roll_no
+        self.course_enrolled = course_enrolled
+
+    def display(self):
+        super().display()
+        print(f"Roll No: {self.roll_no}")
+        print(f"Course Enrolled: {self.course_enrolled}")
+
+
+# Create objects of Teacher and Student class
+teacher1 = Teacher(
+    "John Doe", "123 Main St", "555-1212", 1001, 1234, "Computer Science", "Engineering"
+)
+student1 = Student(
+    "Jane Smith", "456 Elm St", "555-3434", 2002, 1111, "Mathematics"
+)
+
+# Print the details of teacher and student
+print("Teacher Details:")
+teacher1.display()
+
+print("\nStudent Details:")
+student1.display()
